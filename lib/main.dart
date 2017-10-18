@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:katakana/components/animatedFlipCard.dart';
 
 void main() {
   runApp(new KatakanaApp());
@@ -114,15 +115,18 @@ class KatakanaCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextStyle textStyle = Theme.of(context).textTheme.display1;
-    return new Card(
-      color: Colors.white,
-      child: new Center(
-        child: new Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            new Text(katakana.japanese, style: textStyle, textScaleFactor: 5.0),
-          ],
+
+    return new AnimatedFlipCard(
+      firstWidget: new Card(
+        color: Colors.white,
+        child: new Center(
+          child: new Text(katakana.japanese, style: textStyle, textScaleFactor: 5.0),
+        ),
+      ),
+      secondWidget: new Card(
+        color: Colors.white,
+        child: new Center(
+          child: new Text(katakana.phonetics, style: textStyle, textScaleFactor: 5.0),
         ),
       ),
     );
