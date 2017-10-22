@@ -13,9 +13,102 @@ class KatakanaApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: new KatakanaPage(title: 'カタカナ'),
+      home: new HomePage(title: 'カタカナ'),
+      routes: <String, WidgetBuilder>{
+        '/a': (BuildContext context) => new KatakanaPage(title: 'アイウエオ'),
+        '/k': (BuildContext context) => new KatakanaPage(title: 'カキクケコ'),
+        '/s': (BuildContext context) => new KatakanaPage(title: 'サシスセソ'),
+        '/t': (BuildContext context) => new KatakanaPage(title: 'アイウエオ'),
+        '/n': (BuildContext context) => new KatakanaPage(title: 'ナニヌネノ'),
+        '/h': (BuildContext context) => new KatakanaPage(title: 'ハヒフヘホ'),
+        '/m': (BuildContext context) => new KatakanaPage(title: 'マミムメモ'),
+        '/y': (BuildContext context) => new KatakanaPage(title: 'ヤ　ユ　ヨ'),
+        '/r': (BuildContext context) => new KatakanaPage(title: 'ラリルレロ'),
+        '/w': (BuildContext context) => new KatakanaPage(title: 'ワ    ヲ'),
+      },
     );
   }
+}
+
+class HomePage extends StatefulWidget {
+  HomePage({Key key, this.title}) : super(key:key);
+  final String title;
+
+  @override
+  _HomePageState createState() => new _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: const Text('カタカナ'),
+        centerTitle: true,
+      ),
+      body:
+        new GridView.count(
+          primary: false,
+          padding: const EdgeInsets.all(20.0),
+          crossAxisSpacing: 10.0,
+          crossAxisCount: 3,
+          children: <Widget>[
+            new Card(
+              child: new FlatButton(
+                child: const Text('ア'),
+                onPressed: () {
+                  Navigator.push(context, new MaterialPageRoute(builder: (_)))
+                },
+              ),
+            ),
+            new Card(
+              child: new FlatButton(
+                child: const Text('カ'),
+                onPressed: () { /* ... */ },
+              ),
+            ),
+            new Card(
+              child: new FlatButton(
+                child: const Text('サ'),
+                onPressed: () { /* ... */ },
+              ),
+            ),
+            new Card(
+              child: new FlatButton(
+                child: const Text('タ'),
+                onPressed: () { /* ... */ },
+              ),
+            ),
+            new Card(
+              child: new FlatButton(
+                child: const Text('ナ'),
+                onPressed: () { /* ... */ },
+              ),
+            ),
+            new Card(
+              child: new FlatButton(
+                child: const Text('ハ'),
+                onPressed: () { /* ... */ },
+              ),
+            ),
+            new Card(
+              child: new FlatButton(
+                child: const Text('マ'),
+                onPressed: () { /* ... */ },
+              ),
+            ),
+            new Card(
+              child: new FlatButton(
+                child: const Text('ラ'),
+                onPressed: () { /* ... */ },
+              ),
+            )
+          ],
+      )
+    );
+  }
+
 }
 
 class KatakanaPage extends StatefulWidget {
@@ -54,26 +147,31 @@ class _KatakanaPageState extends State<KatakanaPage> with SingleTickerProviderSt
     return new Scaffold(
       appBar: new AppBar(
         title: const Text('カタカナ'),
+        leading: new BackButton(),
         centerTitle: true,
-        leading: new IconButton(
-          tooltip: 'Previous choice',
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () { _nextPage(-1); },
-        ),
-        actions: <Widget>[
-          new IconButton(
-            icon: const Icon(Icons.arrow_forward),
-            tooltip: 'Next choice',
-            onPressed: () { _nextPage(1); },
-          ),
-        ],
         bottom: new PreferredSize(
           preferredSize: const Size.fromHeight(48.0),
           child: new Theme(
             data: Theme.of(context).copyWith(accentColor: Colors.white),
             child: new Container(
               height: 48.0,
-              child: new TabPageSelector(controller: _tabController),
+              child: new Row(
+                children: <Widget>[
+                  new IconButton(
+                    tooltip: 'Previous choice',
+                    icon: const Icon(Icons.arrow_back),
+                    onPressed: () { _nextPage(-1); },
+                  ),
+                  new Expanded(
+                    child: new Center(child: new TabPageSelector(controller: _tabController)),
+                  ),
+                  new IconButton(
+                    icon: const Icon(Icons.arrow_forward),
+                    tooltip: 'Next choice',
+                    onPressed: () { _nextPage(1); },
+                  ),
+                ]
+              )
             ),
           ),
         ),
