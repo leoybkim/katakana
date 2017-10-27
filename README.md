@@ -3,8 +3,8 @@
 ### Learn how to read and pronounce Japanese characters
 katakana is a cross-platform mobile app built with [Flutter](http://flutter.io/)
 
-![Screenshot](img/screenshot.png)
 
+<img src="img/ios_main.png" width="200"/> <img src="img/ios_katakana.png" width="200"/> <img src="img/ios_romaji.png" width="200"/> 
 
 ### Contributing 
 Take a look at the current list of issues and call dibs by leaving a comment. 
