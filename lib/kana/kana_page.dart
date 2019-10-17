@@ -14,11 +14,13 @@ class KanaPage extends StatefulWidget {
 
 class _KanaPageState extends State<KanaPage> {
   KanaBloc _bloc = KanaBloc();
-  bool _switchState = false;
+
   //Scripts enum currently contains only two elements, but using CircularLinkedList makes switching scalable
   // as we can Kanji to Scripts enum later on and wont have to worry about implement a way to toggle between the three.
   final _scripts =
       CircularLinkedList<Script>.fromIterable(Script.values);
+
+
   Script get _script => _scripts.current ?? _scripts.next();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -28,8 +30,8 @@ class _KanaPageState extends State<KanaPage> {
   };
 
   final _$ScriptToTitle = {
-    Script.Hiragana: 'ひらがな',
-    Script.Katakana: 'カタカナ',
+    Script.Hiragana: 'ひらがな (Hiragana)',
+    Script.Katakana: 'カタカナ (Katakana)',
   };
 
   @override
@@ -51,23 +53,6 @@ class _KanaPageState extends State<KanaPage> {
         key: _scaffoldKey,
         appBar: AppBar(
           title: Text(_$ScriptToTitle[_script]),
-          actions: <Widget>[
-            Center(
-              child: Text('あ'),
-            ),
-            Switch(
-
-              value: _switchState,
-              onChanged: (state) {
-                _bloc
-                    .fetchKanaGroups(state ? Script.Katakana : Script.Hiragana);
-                setState(() {
-                  _switchState = state;
-                });
-              },
-            ),
-            Center(child: Text('ア'))
-          ],
         ),
         floatingActionButton: FloatingActionButton(
           child: Text(_$ScriptToButtonText[_script]),
@@ -88,7 +73,7 @@ class _KanaPageState extends State<KanaPage> {
                 padding: const EdgeInsets.all(20.0),
                 crossAxisSpacing: 10.0,
                 crossAxisCount: 3,
-                children: snapshot.data
+                children: dataList
                         ?.map(
                           (group) => Card(
                             child: FlatButton(
