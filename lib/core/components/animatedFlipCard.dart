@@ -11,7 +11,7 @@ class AnimatedFlipCard extends StatefulWidget{
   final Duration duration;
   final Axis direction;
 
-  @override AnimatedCardState createState() => new AnimatedCardState();
+  @override AnimatedCardState createState() => AnimatedCardState();
 }
 
 class AnimatedCardState extends State<AnimatedFlipCard> with SingleTickerProviderStateMixin{
@@ -36,28 +36,28 @@ class AnimatedCardState extends State<AnimatedFlipCard> with SingleTickerProvide
     _duration = widget.duration ?? _defaultDuration;
     _direction = widget.direction ?? _defaultDirection;
 
-    controller = new AnimationController(vsync: this, duration: _duration);
+    controller = AnimationController(vsync: this, duration: _duration);
 
     // Have to init it with Tween and start animation in order to become visible
-    _firstWidgetAnimation = new Tween(
+    _firstWidgetAnimation = Tween(
       begin: 1.0,
       end: 0.0,
-    ).animate(new CurvedAnimation(
+    ).animate(CurvedAnimation(
       parent: controller,
-      curve: new Interval(0.0, 0.5, curve: Curves.fastOutSlowIn),
+      curve: Interval(0.0, 0.5, curve: Curves.fastOutSlowIn),
     ));
 
-    _secondWidgetAnimation = new CurvedAnimation(
+    _secondWidgetAnimation = CurvedAnimation(
       parent: controller,
-      curve: new Interval(0.5, 1.0, curve: Curves.fastOutSlowIn),
+      curve: Interval(0.5, 1.0, curve: Curves.fastOutSlowIn),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: _toggle,
-      child: new Stack(
+      child: Stack(
         children: <Widget>[
           _makeAnimatedBuilder(_firstWidgetAnimation, widget.firstWidget),
           _makeAnimatedBuilder(_secondWidgetAnimation, widget.secondWidget),
@@ -68,11 +68,11 @@ class AnimatedCardState extends State<AnimatedFlipCard> with SingleTickerProvide
 
   /// Make Animated builder that will animate each child with it's own animation
   Widget _makeAnimatedBuilder(Animation<double> animation, Widget child){
-    return new AnimatedBuilder(
+    return AnimatedBuilder(
         animation: animation,
         child: child,
         builder: (BuildContext context, Widget child){
-          return new Transform(
+          return Transform(
             transform: _getAnimatedTransform(animation),
             alignment: FractionalOffset.center,
             child: child,
@@ -84,9 +84,9 @@ class AnimatedCardState extends State<AnimatedFlipCard> with SingleTickerProvide
   /// Get matrix animation transformation
   Matrix4 _getAnimatedTransform(Animation<double> animation){
     if(_direction == Axis.vertical){
-      return new Matrix4.identity()..scale(1.0, animation.value, 1.0);
+      return Matrix4.identity()..scale(1.0, animation.value, 1.0);
     }else{
-      return new Matrix4.identity()..scale(animation.value, 1.0, 1.0);
+      return Matrix4.identity()..scale(animation.value, 1.0, 1.0);
     }
   }
 

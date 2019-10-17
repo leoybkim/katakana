@@ -1,12 +1,16 @@
 # katakana
 
-### Learn how to read and pronounce Japanese characters
-katakana is a cross-platform mobile app built with [Flutter](http://flutter.io/)
+A new Flutter project.
 
+## Getting Started
 
-<img src="img/ios_main.png" width="200"/> <img src="img/ios_katakana.png" width="200"/> <img src="img/ios_romaji.png" width="200"/> 
+This project is a starting point for a Flutter application.
 
-### Contributing 
-Take a look at the current list of issues and call dibs by leaving a comment. 
-Please fork this repo and make a pull request once you are done. 
-Thanks and have fun :pray: 
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

@@ -1,0 +1,246 @@
+[
+    {
+        "id": "a",
+        "script": 0,
+        "letters": [
+            {
+                "japanese": "あ",
+                "romaji": "a"
+            },
+            {
+                "japanese": "い",
+                "romaji": "i"
+            },
+            {
+                "japanese": "う",
+                "romaji": "u"
+            },
+            {
+                "japanese": "え",
+                "romaji": "e"
+            },
+            {
+                "japanese": "お",
+                "romaji": "o"
+            }
+        ]
+    },
+    {
+        "id": "k",
+        "script": 0,
+        "letters": [
+            {
+                "japanese": "か",
+                "romaji": "ka"
+            },
+            {
+                "japanese": "き",
+                "romaji": "ki"
+            },
+            {
+                "japanese": "く",
+                "romaji": "ku"
+            },
+            {
+                "japanese": "け",
+                "romaji": "ke"
+            },
+            {
+                "japanese": "こ",
+                "romaji": "ko"
+            }
+        ]
+    },
+    {
+        "id": "s",
+        "script": 0,
+        "letters": [
+            {
+                "japanese": "さ",
+                "romaji": "sa"
+            },
+            {
+                "japanese": "し",
+                "romaji": "shi"
+            },
+            {
+                "japanese": "す",
+                "romaji": "su"
+            },
+            {
+                "japanese": "せ",
+                "romaji": "se"
+            },
+            {
+                "japanese": "そ",
+                "romaji": "so"
+            }
+        ]
+    },
+    {
+        "id": "t",
+        "script": 0,
+        "letters": [
+            {
+                "japanese": "た",
+                "romaji": "ta"
+            },
+            {
+                "japanese": "ち",
+                "romaji": "chi"
+            },
+            {
+                "japanese": "つ",
+                "romaji": "tsu"
+            },
+            {
+                "japanese": "て",
+                "romaji": "te"
+            },
+            {
+                "japanese": "と",
+                "romaji": "to"
+            }
+        ]
+    },
+    {
+        "id": "n",
+        "script": 0,
+        "letters": [
+            {
+                "japanese": "な",
+                "romaji": "na"
+            },
+            {
+                "japanese": "に",
+                "romaji": "ni"
+            },
+            {
+                "japanese": "ぬ",
+                "romaji": "nu"
+            },
+            {
+                "japanese": "ね",
+                "romaji": "ne"
+            },
+            {
+                "japanese": "の",
+                "romaji": "no"
+            }
+        ]
+    },
+    {
+        "id": "h",
+        "script": 0,
+        "letters": [
+            {
+                "japanese": "は",
+                "romaji": "ha"
+            },
+            {
+                "japanese": "ひ",
+                "romaji": "hi"
+            },
+            {
+                "japanese": "ふ",
+                "romaji": "fu"
+            },
+            {
+                "japanese": "ヘ",
+                "romaji": "he"
+            },
+            {
+                "japanese": "ほ",
+                "romaji": "ho"
+            }
+        ]
+    },
+    {
+        "id": "m",
+        "script": 0,
+        "letters": [
+            {
+                "japanese": "ま",
+                "romaji": "ma"
+            },
+            {
+                "japanese": "み",
+                "romaji": "mi"
+            },
+            {
+                "japanese": "む",
+                "romaji": "mu"
+            },
+            {
+                "japanese": "め",
+                "romaji": "me"
+            },
+            {
+                "japanese": "も",
+                "romaji": "mo"
+            }
+        ]
+    },
+    {
+        "id": "y",
+        "script": 0,
+        "letters": [
+            {
+                "japanese": "や",
+                "romaji": "ya"
+            },
+            {
+                "japanese": "ゆ",
+                "romaji": "yu"
+            },
+            {
+                "japanese": "よ",
+                "romaji": "yo"
+            }
+        ]
+    },
+    {
+        "id": "r",
+        "script": 0,
+        "letters": [
+            {
+                "japanese": "ら",
+                "romaji": "ra"
+            },
+            {
+                "japanese": "り",
+                "romaji": "ri"
+            },
+            {
+                "japanese": "る",
+                "romaji": "ru"
+            },
+            {
+                "japanese": "れ",
+                "romaji": "re"
+            },
+            {
+                "japanese": "ろ",
+                "romaji": "ro"
+            }
+        ]
+    },
+    {
+        "id": "w",
+        "script": 0,
+        "letters": [
+            {
+                "japanese": "わ",
+                "romaji": "wa"
+            },
+            {
+                "japanese": "を",
+                "romaji": "wo"
+            },
+            {
+                "japanese": "ん",
+                "romaji": "n"
+            }
+        ]
+    }
+]
